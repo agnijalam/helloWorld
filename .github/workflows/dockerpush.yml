@@ -25,3 +25,6 @@ jobs:
     - name: docker build 
       run: |
        docker build -t shijukuchelan/helloworld:1.0.1
+    - name: docker push 
+      run: |
+       docker push shijukuchelan/helloworld:1.0.1
