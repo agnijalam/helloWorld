@@ -16,8 +16,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: docker login 
+      env:
+       DOCKER_USER: ${{secrets.DOCKER_USER}}
+       DOCKER_PASSWOD: ${{secrets.DOCKER_USER}       
+      run: |
+       docker login -u $DOCKER_USER -p $DOCKER_PASSWORD   
     - name: docker build 
       run: |
        docker build -t shijukuchelan/helloworld:1.0.1
-       
-      
